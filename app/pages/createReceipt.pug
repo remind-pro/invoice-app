@@ -1,0 +1,36 @@
+include ../../node_modules/bemto.pug/bemto.pug
+include ../blocks/pageHeader/pageHeader
+include ../blocks/form/form
+
+-var clientTitle = ['Client name', 'Client phone number', 'Client address']
+-var clientPlacehold = ['The vegan Co', '1234567890', '99, Beet Root Street, Carrot Town, 12345, Cabbage Country']
+-var clientHeading = 'Client info'
+-var clientHeadtitle = 'This receipt is for Invoice #00001'
+-var clientItemCount = [ [0, 2], [2, 3] ]
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    link(rel="stylesheet", href="css/normalize.min.css")
+    link(rel="stylesheet", href="css/style.min.css")
+    title Create receipt
+  body
+    +header(0, 'Generate invoice', 'Invoice #00001', 'Go back')
+    .info
+      +form(clientHeading, clientTitle, clientPlacehold, clientItemCount, 0, clientHeadtitle)
+      +b.SECTION.form
+        +e.header
+          +e.H2.heading Receipt settings
+        +e.FORM.list
+          +e.wrapper
+            +e.LABEL(for="checkBox1").item.form__item--checkBox
+              +e.customInput.form__customInput--active
+              +e.INPUT(type="checkbox" id="checkBox1" hidden).checkBox
+              +e.SPAN.checkBoxTitle Turn on link sharing and copy to my clipboard
+            +e.LABEL(for="checkBox1").item.form__item--checkBox
+              +e.customInput
+              +e.INPUT(type="checkbox" id="checkBox1" hidden).checkBox
+              +e.SPAN.checkBoxTitle Automagically email link to client and CC me on it
+                +e.checkBoxTitle.form__checkBoxTitle--reg (To: client@email.com, From: me@email.com)

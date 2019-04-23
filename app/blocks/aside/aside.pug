@@ -1,0 +1,18 @@
+mixin aside
+
+  +b.ASIDE.aside
+    +e.NAV.nav
+      +e.UL.list
+        +e.LI.item
+          +e.A(href="index.html").link.aside__link--active Home
+        +e.LI.item
+          +e.A(href="accountFree.html").link Account
+        +e.LI.item
+          +e.A(href="upgrade.html").link Upgrade
+        +e.LI.item
+          +e.A(href="mailto:hello@ir.com").link Support
+    +e.info
+      +e.SPAN.title.aside__title--plan FREE PLAN
+      +e.SPAN.title 2/5 invoices
+      +e.SPAN.title.aside__title--reg left this month
+      +e.A(href="upgrade.html").title.aside__title--link Upgrade now!

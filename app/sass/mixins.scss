@@ -1,0 +1,7 @@
+@mixin Nunito( $size, $fw, $lh, $color){
+
+  font: $fw $size 'Nunito', Arial, sans-serif;
+  line-height: $lh;
+  color: $color;
+
+}

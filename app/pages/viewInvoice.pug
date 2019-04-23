@@ -1,0 +1,129 @@
+include ../../node_modules/bemto.pug/bemto.pug
+include ../blocks/tabList/tabList
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    link(rel="stylesheet", href="css/normalize.min.css")
+    link(rel="stylesheet", href="css/style.min.css")
+    title View invoice
+  body
+    +b.HEADER.pageHeader.pageHeader--view.pageHeader--column
+      +b.notify
+        +e.SPAN.info Show off your logo and customize a thank you footer for only $7/mo!
+          +e.A(href="").upgrade Upgrade now.
+      +e.wrap.pageHeader__wrap--heading
+        +e.A(href="index.html").goBack Go back
+        +e.A(href="index.html").goBack--arrow
+        +b.tabList.tabList--view
+          +e.tab
+            +e.A(href="viewInvoice.html").link.tabList__link--active Invoice
+          +e.tab
+            +e.A(href="viewReceipt.html").link Receipt
+        +e.emptyItem
+      +e.wrap
+        +e.heading Invoice INV00001
+          +e.SPAN.lowHeading from Thompson Jefferies at Pier Plumbing Co.
+        +e.btnWrap
+          +e.BUTTON.controls.controls--edit
+            +e.IMG(src="img/copy.svg").icon
+            +e.SPAN.title Copy
+          +e.BUTTON.controls.controls--delete
+            +e.IMG(src="img/delete.svg").icon
+            +e.SPAN.title Delete
+          +e.BUTTON.controls.controls--edit
+            +e.IMG(src="img/edit.svg").icon
+            +e.SPAN.title Edit
+          +e.BUTTON.button.pageHeader__button--view.pageHeader__button--hide Download invoice
+          +e.BUTTON.button.pageHeader__button--view.pageHeader__button.pageHeader__button--mob
+            +e.IMG(src="img/cloud.svg").icon
+            +e.SPAN.title Download
+    +b.SECTION.document.document--invoice
+      +e.wrap
+        +e.header
+          +e.H1.heading Piper Plumbing Co.
+          +e.title.document__title--header We unclog pipes so you dont't have to.
+          +e.title
+          +e.addressWrap
+            +e.SPAN.address 99 New Pipe Street,
+            +e.SPAN.address Newtown, 12345,
+            +e.SPAN.address Plumbing Nation.
+          +e.contacts
+            +e.SPAN.phone 1234567890
+            +e.SPAN.line
+            +e.SPAN.email email@email.com
+            +e.SPAN.line
+            +e.SPAN.site piperplumbing.com
+        +e.logo
+          +e.IMG(src='img/logo-grey.svg').logoPic
+        
+      +e.billTo
+        +e.billToWrap
+          +e.billToTitle Bill to:
+          +e.company The Vegan Club
+          +e.addressWrap
+            +e.SPAN.address 99, Beet Root Street,
+            +e.SPAN.address Carrot Town, 12345,
+            +e.SPAN.address Cabbage Country.
+            +e.SPAN.phone 1234567890
+        +e.orderInfo
+          +e.column
+            +e.SPAN.title Invoice:
+            +e.SPAN.title Issued:
+            +e.SPAN.title Due:
+          +e.column
+            +e.SPAN.title.document__title--reg #00001
+            +e.SPAN.title.document__title--reg 3 Jan, 2019
+            +e.SPAN.title.document__title--reg 3 Feb, 2019
+
+      +e.products
+        +e.column
+          +e.SPAN.cell.document__cell--heading No.
+          +e.SPAN.cell 1
+          +e.SPAN.cell 2
+          +e.SPAN.cell 3
+        +e.column
+          +e.SPAN.cell.document__cell--heading Name
+          +e.SPAN.cell Plumbing Services
+          +e.SPAN.cell Plumbing Services
+          +e.SPAN.cell Plumbing Services
+        +e.column.document__column--margin
+          +e.SPAN.cell.document__cell--heading Description
+          +e.SPAN.cell Fixing the toilet
+          +e.SPAN.cell Fixing the toilet
+          +e.SPAN.cell Fixing the toilet
+        +e.column.document__column--aic
+          +e.SPAN.cell.document__cell--heading Quantity
+          +e.SPAN.cell 3
+          +e.SPAN.cell 3
+          +e.SPAN.cell 3
+        +e.column.document__column--aic
+          +e.SPAN.cell.document__cell--heading Unit Price
+          +e.SPAN.cell $25
+          +e.SPAN.cell $25
+          +e.SPAN.cell $25
+        +e.column.document__column--aic
+          +e.SPAN.cell.document__cell--heading Amount
+          +e.SPAN.cell $75
+          +e.SPAN.cell $75
+          +e.SPAN.cell $75
+      
+      +e.total
+        +e.wrapper
+          +e.SPAN.title.document__title--totalMarg Subtotal
+          +e.SPAN.title.document__title--totalMarg Tax 10%
+          +e.SPAN.title.document__title--totalMarg Total
+        +e.wrapper.document__wrapper--aic
+          +e.SPAN.title.document__title--total $75
+          +e.SPAN.title.document__title--total $7.5
+          +e.SPAN.title.document__title--total $82.5
+      
+      +e.instruction
+        +e.wrapper.document__wrapper--instruction
+          +e.SPAN.title Payment instructions:
+          +e.SPAN.title.document__title--reg Paypal to payments@piperpumbing.com
+      +e.footer
+        +e.SPAN.title.document__title--reg18 Create a invoice in just 10 seconds with invoicerecipt.com.

@@ -1,0 +1,91 @@
+.info{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 56px 51px 0 52px;
+  height: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+
+  &--upgrade{
+    max-width: 1100px;
+  }
+
+  &__heading{
+    margin: 0 0 37px 0;
+    @include Nunito(30px, 700, 37px, $font-grey);
+
+    &--total{
+      font-weight: 400;
+      margin-left: 10px;
+    }
+  }
+
+  &__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__headerHeading{
+    @include Nunito(44px, 700, 55px, $font-grey);
+    margin: 0 0 10px 0;
+  }
+
+  &__headTitle{
+    @include Nunito(18px, 400, 23px, $font-grey);
+  }
+
+
+  &__more{
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
+    margin-bottom: 80px;
+  }
+
+  &__moreText{
+    @include Nunito(18px, 700, 23px, $font-grey);
+    margin-right: -20px;
+  }
+}
+
+@media (max-width: 839px){
+  .info{
+
+    &__header{
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      margin-left: 30px;
+    }
+
+    &__headerHeading{
+      @include Nunito(22px, 700, 27px, $font-grey);
+      margin: 0 0 10px 0;
+    }
+
+    &__headTitle{
+      @include Nunito(14px, 400, 18px, $font-grey);
+      margin: 0 0 10px 0;
+    }
+
+  }
+}
+
+@media (max-width: 768px){
+  .info{
+    padding: 28px 14px 0 15px;
+
+    &__heading{
+      font-size: 22px;
+      line-height: 27px;
+      text-align: center;
+      margin: 0 auto 28px auto;
+    }
+
+    &__more{
+      margin-bottom: 80px;
+    }
+  }
+}

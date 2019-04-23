@@ -1,0 +1,106 @@
+.upgrade{
+  display: flex;
+  justify-content: space-between;
+  max-width: 1000px;
+
+  &__item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 448px;
+    background: #fff;
+    flex-grow: 1;
+    border-radius: 10px;
+  }
+
+  &__item:not(:last-child){
+    margin-right: 30px;
+  }
+
+  &__header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 49px;
+    border-radius: 10px 10px 0 0;
+    background: $blue;
+    @include Nunito(30px, 700, 37px, #fff);
+  }
+
+  &__list{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__price{
+    position: relative;
+    @include Nunito(60px, 700, 76px, $font-grey);
+    margin: 30px 0 30px 0;
+    padding-bottom: 30px;
+
+    &::after{
+      position: absolute;
+      content: '';
+      bottom: 0;
+      left: 50%;
+      margin-left: -128.5px;
+      height: 2px;
+      width: 257px;
+      background: $font-grey;
+      opacity: .5;
+    }
+  }
+
+  &__description{
+    @include Nunito(20px, 700, 26px, $font-grey);
+    margin-bottom: 15px;
+  }
+
+  &__advantages{
+    display: flex;
+    align-items: center;
+    @include Nunito(18px, 400, 23px, $font-grey);
+    margin-bottom: 10px;
+
+    &::before{
+      display: block;
+      content: '';
+      width: 25px;
+      height: 25px;
+      background: url('../img/tick.svg') no-repeat;
+      background-size: contain;
+      margin-right: 15px;
+    }
+  }
+
+  &__subscribe{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% - 50px);
+    height: 68px;
+    margin: 70px 25px 30px 25px;
+    @include Nunito(20px, 700, 26px, #fff);
+    border: none;
+    background: $orange;
+    border-radius: 10px;
+  }
+
+}
+
+@media (max-width: 839px){
+  .upgrade{
+    flex-direction: column;
+
+    &__item{
+      width: 100%;
+      margin: 0 auto 50px auto;
+    }
+
+    &__item:not(:last-child){
+      margin-right: auto;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+include ../card/card
+
+mixin content(heading, total)
+  +b.info
+    +e.heading= heading
+      +e.SPAN.heading.info__heading--total= total
+    +card
+    +card
+    +card
+    +card
+    +card
+    +e.more
+      +e.SPAN.moreText Loading more…

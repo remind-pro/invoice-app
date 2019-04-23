@@ -1,0 +1,23 @@
+.logo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 68px;
+  width: 203px;
+  background: $blue;
+  
+  &__pic{
+    width: 44px;
+    height: 44px;
+  }
+}
+
+@media (max-width: 768px){
+
+  .logo{
+    width: 62px;
+    height: 46px;
+  }
+  
+
+}

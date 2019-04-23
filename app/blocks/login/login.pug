@@ -1,0 +1,23 @@
+mixin login(pic)
+
+  +b.SECTION.login
+    +e(class="greeting login__greeting--" + pic)
+      +e.overlay
+        +e.SPAN.title.login__title--bold Work smart, not hard.
+        +e.SPAN.title Invoicing and receipts in 5 seconds!
+    +e.form
+      +e.H1.heading Create account
+      +e.wrap
+        +e.item
+          +e.LABEL(for='name').label Name
+          +e.INPUT(placeholder="Elon Musk")#name.input
+        +e.item
+          +e.LABEL(for='email').label Email
+          +e.INPUT(placeholder="elonmusk@tesla.com")#email.input
+        +e.item
+          +e.LABEL(for='password').label Password
+          +e.INPUT(placeholder="*********")#password.input
+        +e.BUTTON.btn Create my free account
+      +e.info
+        +e.SPAN.question Got account?
+          +e.A(href="").link Log in

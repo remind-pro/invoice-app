@@ -1,0 +1,69 @@
+include ../../node_modules/bemto.pug/bemto.pug
+include ../blocks/pageHeader/pageHeader
+include ../blocks/aside/aside
+include ../blocks/card/card
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    link(rel="stylesheet", href="css/normalize.min.css")
+    link(rel="stylesheet", href="css/style.min.css")
+    title Paid
+  body
+    +b.layout.layout--margTop
+      +e.cell
+        +b.HEADER.pageHeader
+          +logo
+          +b.tabList
+            +e.tab
+              +e.A(href="index.html").link Invoiced
+            +e.tab
+              +e.A(href="paid.html").link.tabList__link--active Paid
+          +e.A(href="createInvoice.html").button + Create invoice
+      +e.wrap
+        +e.cell.layout__cell--aside
+          +aside
+        +e.cell
+          +e.cell
+            +b.info
+              +e.heading 🤑 Paid:
+                +e.SPAN.heading.info__heading--total $32,912
+              +b.card
+                +e.column
+                  +e.item
+                    +e.SPAN.title Invoice:
+                    +e.SPAN.detail #0000001
+                  +e.item
+                    +e.SPAN.title Client:
+                    +e.SPAN.detail Starbuck Corp.
+                +e.column
+                  +e.item
+                    +e.SPAN.title Total:
+                    +e.SPAN.detail.card__detail--total 29,800
+                  +e.item
+                    +e.SPAN.title Issued:
+                    +e.SPAN.detail 4 Jan,2019
+                +e.info
+                  +e.A(href="viewInvoice.html").action View invoice
+                  +e.A(href="viewReceipt.html").payInfo.card__payInfo--download View receipt
+              +b.card
+                +e.column
+                  +e.item
+                    +e.SPAN.title Invoice:
+                    +e.SPAN.detail #0000001
+                  +e.item
+                    +e.SPAN.title Client:
+                    +e.SPAN.detail Starbuck Corp.
+                +e.column
+                  +e.item
+                    +e.SPAN.title Total:
+                    +e.SPAN.detail.card__detail--total 29,800
+                  +e.item
+                    +e.SPAN.title Issued:
+                    +e.SPAN.detail 4 Jan,2019
+                +e.info
+                  +e.A(href="viewInvoice.html").action View invoice
+                  +e.A(href="viewReceipt.html").payInfo.card__payInfo--download View receipt

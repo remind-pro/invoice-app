@@ -1,0 +1,65 @@
+.tabList{
+  display: flex;
+  height: 100%;
+
+  &__tab{
+    height: 100%;
+    width: 120px;
+  }
+
+  &__link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include Nunito(20px, 400, 26px, $font-grey);
+    width: 100%;
+    height: 100%;
+
+    &:hover{
+      color: $blue;
+    }
+
+    &--active{
+      position: relative;
+      color: $blue;
+      font-weight: 700;
+
+      &::after{
+        position: absolute;
+        content: '';
+        bottom: 0;
+        left: 50%;
+        margin-left: -27.5px;
+        width: 57px;
+        height: 5px;
+        background: $blue;
+      }
+    }
+  }
+}
+
+@media (max-width: 839px){
+
+  .tabList{
+    justify-content: center;
+    order: 3;
+    width: 100%;
+    margin-top: 25px;
+
+    &--view{
+      margin-top: 0;
+      align-items: flex-end;
+    }
+
+    &__tab{
+      width: 94px;
+      height: 30px;
+    }
+
+    &__link{
+      font-size: 18px;
+      line-height: 23px;
+      padding-bottom: 10px;
+    }
+  }
+}

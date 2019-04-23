@@ -1,0 +1,19 @@
+include ../tabList/tabList
+include ../logo/logo
+
+mixin header(set, btnTitle, heading, backTitle)
+
+  +b.HEADER.pageHeader
+    if set === 1
+      +logo
+      +e.A(href="createInvoice.html").button= btnTitle
+    if set === 2
+      +logo
+    if set === 3
+      +logo
+      +tabs
+      +e.A(href="createInvoice.html").button= btnTitle
+    if set === 0
+      +e.A(href="index.html").goBack= backTitle
+      +e.heading= heading
+      +e.A(href="createInvoice.html").button= btnTitle

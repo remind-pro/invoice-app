@@ -1,0 +1,34 @@
+include ../../node_modules/bemto.pug/bemto.pug
+include ../blocks/login/login
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    link(rel="stylesheet", href="css/normalize.min.css")
+    link(rel="stylesheet", href="css/style.min.css")
+    title Create account
+  body(class="pageBody--login pageBody--auth")
+    +b.SECTION.login
+      +e(class="greeting login__greeting--create")
+        +e.overlay
+          +e.SPAN.title.login__title--bold Work smart, not hard.
+          +e.SPAN.title Invoicing and receipts in 5 seconds!
+      +e.form
+        +e.H1.heading Create account
+        +e.wrap
+          +e.item
+            +e.LABEL(for='name').label Name
+            +e.INPUT(placeholder="Elon Musk")#name.input
+          +e.item
+            +e.LABEL(for='email').label Email
+            +e.INPUT(placeholder="elonmusk@tesla.com")#email.input
+          +e.item
+            +e.LABEL(for='password').label Password
+            +e.INPUT(placeholder="*********")#password.input
+          +e.BUTTON.btn Create my free account
+        +e.info
+          +e.SPAN.question Got account?
+            +e.A(href="").link Log in

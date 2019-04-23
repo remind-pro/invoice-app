@@ -1,0 +1,25 @@
+mixin form(heading, titles, placehold, items, headTitle)
+
+  +b.SECTION.form
+    if heading
+      +e.header
+        +e.H2.heading= heading
+        if headTitle
+          +e.SPAN.headTitle= headTitle
+    +e.FORM(class= `list form__list--${heading.replace(/[., !&?:]/g, '')}`)
+      -var index = 0
+      each wrap, i in items
+        +e(class=`wrap form__wrap--${heading.replace(/[., !&?:]/g, '') + (i+1)}`)
+          each key in placehold.slice( wrap[0], wrap[1] )
+            +e(class= `item form__item--${heading.replace(/[., !&?:]/g, '') + (index+1)}`)
+              if titles[index]
+                if titles[index] === 'Plan'
+                  +e.LABEL(for=`${heading.replace(/[., !&?:]/g, '') + (index+1)}`).title=titles[index]
+                  +e.itemWrap
+                    +e.INPUT(placeholder="" + key id=`${heading.replace(/[., !&?:]/g, '') + (index+1)}`).input
+                    +e.A(href="upgrade.html").upgrade Upgrade now
+                else
+                  +e.LABEL(for=`${heading.replace(/[., !&?:]/g, '') + (index+1)}`).title=titles[index]
+                  +e.INPUT(placeholder="" + key id=`${heading.replace(/[., !&?:]/g, '') + (index+1)}`).input
+
+              -index++

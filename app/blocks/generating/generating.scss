@@ -1,0 +1,43 @@
+.generating{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+
+  &__icon{
+    width: 217px;
+    height: 217px;
+    background: url('../img/logo.svg') no-repeat;
+    background-size: contain;
+  }
+
+  &__heading{
+    @include Nunito(44px, 700, 55px, $blue);
+  }
+
+  &__title{
+    @include Nunito(20px, 700, 26px, $blue);
+  }
+}
+
+@media (max-width: 839px){
+  .generating{
+
+    &__icon{
+      width: 144px;
+      height: 144px;
+    }
+
+    &__heading{
+      @include Nunito(20px, 700, 26px, $blue);
+    }
+  
+    &__title{
+      @include Nunito(14px, 400, 18px, $blue);
+      max-width: 180px;
+      text-align: center;
+    }
+  }
+}

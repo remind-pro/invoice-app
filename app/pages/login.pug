@@ -1,0 +1,33 @@
+include ../../node_modules/bemto.pug/bemto.pug
+include ../blocks/login/login
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    link(rel="stylesheet", href="css/normalize.min.css")
+    link(rel="stylesheet", href="css/style.min.css")
+    title App
+  body(class="pageBody--login pageBody--auth")
+    +b.SECTION.login
+      +e(class="greeting login__greeting--login")
+        +e.overlay
+          +e.SPAN.title.login__title--bold Work smart, not hard.
+          +e.SPAN.title Invoicing and receipts in 5 seconds!
+      +e.form
+        +e.H1.heading Log in
+        +e.wrap
+          +e.item
+            +e.LABEL(for='email').label Email
+            +e.INPUT(placeholder="Elon Musk")#email.input
+          +e.item
+            +e.LABEL(for='password').label Password
+            +e.INPUT(placeholder="*********")#password.input
+          +e.BUTTON.btn Log in
+        +e.info
+          +e.SPAN.question Need account?
+            +e.A(href="").link Create free account.
+          +e.SPAN.question Forgot password?
+            +e.A(href="").link Reset password

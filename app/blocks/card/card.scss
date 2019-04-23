@@ -1,0 +1,132 @@
+.card{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 0 0 0 40px;
+  margin-bottom: 16px;
+  border-radius: 10px;
+
+  &__item{
+    height: 31px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__title{
+    width: 70px;
+    @include Nunito(18px, 700, 23px, $font-grey);
+    margin-right: 18px;
+  }
+
+  &__detail{
+    display: flex;
+    align-items: center;
+    @include Nunito(18px, 400, 23px, $font-grey);
+
+    &--total{
+      
+      &::before{
+        content: '$';
+        font-size: 12px;
+      }
+    }
+  }
+
+  &__action{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include Nunito(16px, 700, 20px, #fff);
+    width: 223px;
+    height: 60px;
+    background: $blue;
+    border-radius: 0 10px 0 0;
+    border: none;
+    cursor: pointer;
+    outline: none;
+
+    &:hover{
+      background: $blue-hover;
+    }
+
+    &:active{
+      background: $blue;
+      box-shadow: inset 0 0 0 1px #fff;
+    }
+  }
+
+  &__payInfo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include Nunito(16px, 700, 20px, $blue);
+    width: 223px;
+    height: 60px;
+    background: $btn-grey;
+    border: none;
+    border-radius: 0 0 10px 0;
+    
+    &--download{
+      cursor: pointer;
+    }
+
+    &:hover{
+      background: #dadada;
+    }
+  }
+}
+
+
+
+
+@media (max-width: 1024px){
+
+  .card{
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 23px 0 0 0;
+
+    &__column{
+      margin-left: 27px;
+    }
+
+    &__info{
+      display: flex;
+      width: 100%;
+      margin-top: 17px;
+    }
+
+    &__action{
+      @include Nunito(14px, 700, 18px, #fff);
+      width: auto;
+      flex-grow: 1;
+      height: 44.5px;
+      border-radius: 0 0 0 10px;
+    }
+  
+    &__payInfo{
+      @include Nunito(14px, 700, 18px, $blue);
+      width: auto;
+      flex-grow: 1;
+      height: 44.5px;
+    }
+
+    &__title{
+      @include Nunito(14px, 700, 18px, $font-grey);
+    }
+  
+    &__detail{
+      @include Nunito(14px, 400, 18px, $font-grey);
+  
+      &--total{
+        
+        &::before{
+          content: '$';
+          font-size: 10px;
+        }
+      }
+    }
+  }
+
+}

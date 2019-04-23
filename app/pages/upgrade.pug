@@ -1,0 +1,28 @@
+include ../../node_modules/bemto.pug/bemto.pug
+include ../blocks/pageHeader/pageHeader
+include ../blocks/aside/aside
+include ../blocks/upgrade/upgrade
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    link(rel="stylesheet", href="css/normalize.min.css")
+    link(rel="stylesheet", href="css/style.min.css")
+    title Upgrade
+  body
+    +b.layout
+      +e.cell
+        +header(2, 'Generate invoice', 'Invoice #00001', 'Go back')
+      +e.wrap
+        +e.cell.layout__cell--aside
+          +aside
+        +e.cell
+          +e.cell
+            +b.info.info--upgrade
+              +e.header
+                +e.H1.headerHeading Upgrade
+                +e.headTitle Save hours when you upgrade!
+              +upgrade

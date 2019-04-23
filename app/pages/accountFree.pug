@@ -1,0 +1,50 @@
+include ../../node_modules/bemto.pug/bemto.pug
+include ../blocks/pageHeader/pageHeader
+include ../blocks/aside/aside
+include ../blocks/form/form
+
+-var accountTitle = ['Name', 'Email', 'Plan', 'Currency']
+-var accountPlacehold = ['Thompson Jefferies', 'tjeff@piperplumbing.com', 'Free', '$USD']
+-var accountHeading = 'Account details'
+-var accountItemCount = [ [0, 2], [2, 4] ]
+
+-var settingsTitle = ['My company name', 'My company phone number', 'My company email', 'My company website', 'My company tagline', 'My company address']
+-var settingsPlacehold = ['Piper Plumbing Co.', '1234567890', 'email@email.com', 'piperplumbing.com', 'We unclog pipes so you don’t have to.', '99 New Pipe Street, Newtown, 12345, Plumbing Nation.']
+-var settingsHeading = 'Invoice settings'
+-var settingsItemCount = [ [0, 2], [2, 4], [4, 5], [5, 6] ]
+
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    link(rel="stylesheet", href="css/normalize.min.css")
+    link(rel="stylesheet", href="css/style.min.css")
+    title Account details
+  body
+    +b.layout
+      +e.cell
+        +header(1, 'Save changes', 'Invoice #00001', 'Go back')
+      +e.wrap
+        +e.cell.layout__cell--aside
+          +aside
+        .info
+          +e.cell
+            +form(accountHeading, accountTitle, accountPlacehold, accountItemCount, 0, 0)
+            +form(settingsHeading, settingsTitle, settingsPlacehold, settingsItemCount, 0, 0)
+            +b.SECTION.form
+              +e.header
+                +e.H2.heading Premium features
+              +e.FORM.list
+                +e.wrap
+                  +e.item
+                    +e.LABEL(for='premium').title Thank you footer
+                    +e.INPUT(placeholder="Thank you for your business!" id="premium").input
+                  +e.setLogo
+                    +e.SPAN.text Company logo
+                    +e.BUTTON.addLogo
+                +e.upgradeOverlay
+                  +e.upgradeTitle Want to access premium features?
+                  +e.A(href="upgrade.html").upgradeBtn Upgrade now

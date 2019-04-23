@@ -1,0 +1,296 @@
+.form{
+  width: 100%;
+  margin: 0 auto 80px auto;
+
+  &__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__heading{
+    @include Nunito(44px, 700, 55px, $font-grey);
+    margin: 0 0 10px 30px;
+  }
+
+  &__headTitle{
+    @include Nunito(18px, 400, 23px, $font-grey);
+  }
+
+  &__wrapper:not(:last-child) {
+    margin-bottom: 40px;
+  }
+
+  &__wrapper{
+    position: relative;
+  }
+
+  &__remove{
+    position: absolute;
+    top: 50%;
+    right: -50px;
+    margin-top: -30px;
+    width: 32px;
+    height: 32px;
+    background: url('../img/remove.svg') no-repeat;
+    background-size: contain;
+    cursor: pointer;
+  }
+
+  &__wrap{
+    display: flex;
+  }
+
+  &__list{
+    position: relative;
+    padding: 44px 77px 30px 77px;
+    background: #fff;
+    border-radius: 10px;
+  }
+
+  &__checkBox{
+    display: none;
+  }
+
+  &__checkBoxTitle{
+    display: flex;
+    flex-direction: column;
+    @include Nunito(20px, 700, 26px, $font-grey);
+    margin-left: 20px;
+
+    &--reg{
+      font-weight: 400;
+      margin-left: 0; 
+    }
+  }
+
+  &__customInput{
+    position: relative;
+    width: 54px;
+    height: 54px;
+    background: #F7F7F7;
+
+    &--active{
+
+      &::before{
+        position: absolute;
+        content: '';
+        top: 50%;
+        left: 50%;
+        margin-left: -13px;
+        margin-top: -9.5px;
+        width: 26px;
+        height: 19px;
+        background: url('../img/tick.svg') no-repeat;
+        background-size: contain;
+      }
+    }
+  }
+
+  &__item{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-basis: 400px;
+    margin-bottom: 30px;
+
+    &--checkBox{
+      flex-direction: row;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    &--Productsservices2{
+      max-width: 112px;
+    }
+
+    &--Productsservices3{
+      max-width: 112px;
+    }
+
+    &--Productsservices4{
+      max-width: 112px;
+    }
+
+    &--Productsservices5{
+      margin-left: 40px;
+    }
+
+    &--Productsservices7{
+      max-width: 112px;
+    }
+
+    &--Productsservices8{
+      max-width: 112px;
+    }
+
+    &--Productsservices9{
+      max-width: 112px;
+    }
+
+    &--Productsservices10{
+      margin-left: 40px;
+    }
+  }
+
+  &__item:not(:last-child){
+    margin-right: 20px;
+  }
+
+  &__title{
+    @include Nunito(20px, 700, 26px, $font-grey);
+    margin: 0 0 10px 20px;
+    cursor: pointer;
+  }
+
+  &__input{
+    padding-left: 20px;
+    width: 100%;
+    height: 54px;
+    border: none;
+    background: $input-grey;
+    @include Nunito(18px, 400, 23px, $font-grey);
+    outline: none;
+    transition: .3s;
+
+    &::placeholder{
+      color: rgba(112, 112, 112, .5);
+    }
+
+    &:focus{
+      box-shadow: inset 0 -2px 0 0 $blue;
+    }
+  }
+
+  &__itemWrap{
+    display: flex;
+    position: relative;
+  }
+
+  &__upgrade{
+    position: absolute;
+    top: 50%;
+    margin-top: -11.5px;
+    right: 20px;
+    @include Nunito(18px, 700, 23px, $blue);
+  }
+
+  &__add{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+  }
+
+  &__addLink{
+    @include Nunito(20px, 700, 26px, $blue);
+  }
+
+  &__setLogo{
+    display: flex;
+    align-items: center;
+    margin-left: 95px;
+  }
+
+  &__text{
+    @include Nunito(20px, 700, 26px, $font-grey);
+    margin-right: 50px;
+  }
+
+  &__addLogo{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: url('../img/plus.svg') no-repeat;
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+    outline: none;
+  }
+
+  &__upgradeOverlay{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(112, 112, 112, .9);
+    border-radius: 10px;
+  }
+
+  &__upgradeTitle{
+    @include Nunito(18px, 700, 23px, #fff);
+    margin-bottom: 15px;
+  }
+
+  &__upgradeBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 213px;
+    height: 68px;
+    background: $orange;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    @include Nunito(20px, 700, 26px, #fff);
+  }
+
+}
+
+@media (max-width: 1100px){
+  .form{
+
+
+    &__wrap{
+      flex-wrap: wrap;
+    }
+  }
+}
+
+@media (max-width: 839px){
+  .form{
+    margin: 25px 0 75px 0;
+
+    &__list{
+      padding: 20px 20px 60px 20px;
+    }
+
+    &__item:not(:last-child){
+      margin-right: 0;
+    }
+
+    &__heading{
+      @include Nunito(22px, 700, 27px, $font-grey);
+      margin: 0 0 10px 20px;
+    }
+
+    &__input{
+      @include Nunito(14px, 400, 18px, $font-grey);
+    }
+
+    &__title{
+      @include Nunito(14px, 700, 18px, $font-grey);
+    }
+
+    &__checkBoxTitle{
+      font-size: 14px;
+    }
+
+    &__setLogo{
+      display: flex;
+      align-items: center;
+      margin-left: 0;
+    }
+
+    &__text{
+      @include Nunito(18px, 700, 23px, $font-grey);
+      margin-right: 50px;
+    }
+  }
+}

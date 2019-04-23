@@ -1,0 +1,26 @@
+include ../../node_modules/bemto.pug/bemto.pug
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    link(rel="stylesheet", href="css/normalize.min.css")
+    link(rel="stylesheet", href="css/style.min.css")
+    title View receipt
+  body
+    +b.HEADER.pageHeader.pageHeader--view.pageHeader--column
+      +e.wrap.pageHeader__wrap--heading
+        +e.A(href="index.html").goBack Go back
+        +e.A(href="index.html").goBack--arrow
+        +b.tabList.tabList--view
+          +e.tab
+            +e.A(href="viewInvoice.html").link Invoice
+          +e.tab
+            +e.A(href="viewReceipt.html").link.tabList__link--active Receipt
+        +e.emptyItem
+    +b.readyCreate
+      +e.heading Ready for a receipt?
+      +e.title No receipt generated for this invoice yet.
+      a.pageHeader__button.pageHeader__button--ready Generate receipt

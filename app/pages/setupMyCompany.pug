@@ -1,0 +1,40 @@
+include ../../node_modules/bemto.pug/bemto.pug
+include ../blocks/login/login
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    link(rel="stylesheet", href="css/normalize.min.css")
+    link(rel="stylesheet", href="css/style.min.css")
+    title Setup my company
+  body(class="pageBody--login pageBody--auth")
+    +b.SECTION.login
+      +e(class="greeting login__greeting--create")
+        +e.overlay
+          +e.SPAN.title.login__title--bold Work smart, not hard.
+          +e.SPAN.title Invoicing and receipts in 5 seconds!
+      +e.form
+        +e.H1.heading Setup my company
+        +e.wrap
+          +e.item
+            +e.LABEL(for='name').label My company name
+            +e.INPUT(placeholder="Piper Plumbing Co.")#name.input
+          +e.item
+            +e.LABEL(for='address').label My company address
+            +e.TEXTAREA(placeholder="99 New Pipe Street, Newtown, 12345, Plumbing Nation.")#address.input.login__input--address
+          +e.item
+            +e.LABEL(for='phone').label My company phone number
+            +e.INPUT(placeholder="1234567890")#phone.input
+          +e.item
+            +e.LABEL(for='email').label My compan email
+            +e.INPUT(placeholder="email@email.com")#email.input
+          +e.item
+            +e.LABEL(for='website').label My compan website
+            +e.INPUT(placeholder="piperplumbing.com")#website.input
+          +e.item
+            +e.LABEL(for='tagline').label My compan tagline
+            +e.INPUT(placeholder="We unclog pipes so you don’t have to.")#tagline.input
+          +e.BUTTON.btn That’s my company!

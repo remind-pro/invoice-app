@@ -1,0 +1,16 @@
+mixin pay
+  +b.pay
+    +e.form
+      +e.item
+        +e.LABEL(for="number").label Card number
+        +e.INPUT(placeholder="1234567890")#number.input
+      +e.wrap
+        +e.item.pay__item--date
+          +e.LABEL(for="date").label MM/YY
+          +e.INPUT(placeholder="MM/YY")#date.input
+        +e.item
+          +e.LABEL(for="cvc").label CVC
+          +e.INPUT(placeholder="CVC")#cvc.input
+      +e.BUTTON.btn Pay $5
+      +e.SPAN.adv Pssst! Go yearly and get 2 months free!
+      +e.I.close X Close

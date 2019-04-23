@@ -1,0 +1,31 @@
+@import 'variables';
+@import 'mixins';
+@import 'fontFace';
+
+//Блоки
+@import '../blocks/layout/layout';
+@import '../blocks/aside/aside';
+@import '../blocks/pageHeader/pageHeader';
+@import '../blocks/tabList/tabList';
+@import '../blocks/logo/logo';
+@import '../blocks/info/info';
+@import '../blocks/card/card';
+@import '../blocks/form/form';
+@import '../blocks/upgrade/upgrade';
+@import '../blocks/login/login';
+@import '../blocks/pay/pay';
+@import '../blocks/document/document';
+@import '../blocks/generating/generating';
+
+body{
+  background: $bg-grey;
+  padding-top: 68px;
+  min-height: 100vh;
+}
+
+.pageBody--auth{
+  padding-top: 0;
+}
+.pageBody--login{
+  min-height: 100vh;
+}

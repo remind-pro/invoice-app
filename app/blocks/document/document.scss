@@ -1,0 +1,352 @@
+.document{
+  max-width: 1280px;
+  margin: 108px auto 56px auto;
+  background: #fff;
+  border-radius: 10px;
+  padding: 56px 65px 0 65px;
+
+  &--invoice{
+    margin-top: 200px;
+  }
+
+  &__wrap{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+
+
+    &::before{
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: -65px;
+      left: -65px;
+      height: 1px;
+      opacity: .5;
+      background: $font-grey;
+    }
+  }
+
+  &__logoPic{
+    max-width: 220px;
+  }
+
+  &__billTo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__orderInfo{
+    display: flex;
+  }
+
+  &__heading{
+    @include Nunito(44px, 700, 55px, $font-grey);
+    margin: 0;
+  }
+
+  &__address{
+    @include Nunito(18px, 400, 23px, $font-grey);
+  }
+
+  &__phone{
+    @include Nunito(18px, 400, 23px, $font-grey);
+  }
+
+  &__email{
+    @include Nunito(18px, 400, 23px, $font-grey);
+  }
+
+  &__site{
+    @include Nunito(18px, 400, 23px, $font-grey);
+  }
+
+  &__billToTitle{
+    @include Nunito(20px, 700, 26px, $font-grey);
+  }
+
+  &__company{
+    @include Nunito(20px, 700, 26px, $font-grey);
+    margin: 20px 0;
+  }
+
+  &__title{
+    @include Nunito(20px, 700, 26px, $font-grey);
+
+    &--header{
+      margin-bottom: 30px;
+    }
+
+    &--reg{
+      font-weight: 400;
+      margin-left: 20px;
+    }
+
+    &--reg18{
+      font-weight: 400;
+      font-size: 18px;
+      color: #fff;
+    }
+
+    &--total{
+      font-weight: 400;
+      font-size: 18px;
+      margin-left: 30px;
+      margin-bottom: 20px;
+    }
+
+    &--totalMarg{
+      margin-bottom: 20px;
+    }
+  }
+
+  &__contacts{
+    display: flex;
+    align-items: center;
+    margin: 30px 0;
+  }
+
+  &__line{
+    height: 16px;
+    width: 1px;
+    background: $font-grey;
+    margin: 0 20px;
+  }
+
+  &__addressWrap{
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__products{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 110px;
+
+    &::before{
+      content: '';
+      position: absolute;
+      top: 30px;
+      right: 0;
+      left: 0;
+      height: 1px;
+      opacity: .5;
+      background: $font-grey;
+    }
+
+    &::after{
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      height: 1px;
+      opacity: .5;
+      background: $font-grey;
+    }
+  }
+
+  &__column{
+    display: flex;
+    flex-direction: column;
+
+    &--margin{
+      margin-right: 80px;
+    }
+
+    &--aic{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__cell{
+    @include Nunito(18px, 400, 23px, $font-grey);
+    margin-bottom: 30px;
+
+    &--heading{
+      font-weight: 700;
+    }
+  }
+
+  &__total{
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    margin: 45px 0 103px 0;
+    padding-bottom: 30px;
+
+    &::before{
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      height: 1px;
+      opacity: .5;
+      background: $font-grey;
+    }
+  }
+
+  &__wrapper{
+    display: flex;
+    flex-direction: column;
+    
+    &--aic{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &--instruction{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+  }
+
+  &__instruction{
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 0 45px 0;
+  }
+
+  &__footer{
+    display: flex;
+    width: calc(100% + 130px);
+    margin-left: -65px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 0 10px 10px;
+    background: $font-grey;
+    padding: 16px 0;
+  }
+
+}
+
+@media (max-width: 839px){
+  .document{
+    padding: 10px 10px 20px 10px;
+    margin: 130px 20px 60px 20px;
+
+    &--receipt{
+      margin-top: 30px;
+    }
+
+    &__products{
+      margin-top: 20px;
+
+      &::before{
+        content: '';
+        position: absolute;
+        top: 20px;
+        right: 0;
+        left: 0;
+        height: 1px;
+        opacity: .5;
+        background: $font-grey;
+      }
+    }
+
+    &__wrap{
+      margin-bottom: 10px;
+  
+  
+      &::before{
+        right: -10px;
+        left: -10px;
+      }
+    }
+
+    &__column{
+
+      &--margin{
+        margin: 0;
+      }
+    }
+
+    &__line{
+      margin: 0 5px;
+      height: 10px;
+    }
+
+    &__heading{
+      font-size: 20px;
+      margin: 0;
+    }
+
+    &__phone{
+      font-size: 8px;
+    }
+
+    &__address{
+      font-size: 8px;
+      margin-bottom: 0;
+      line-height: 10px;
+    }
+
+    &__billToTitle{
+      font-size: 14px;
+    }
+    
+    &__contacts{
+      margin: 5px 0;
+    }
+
+    &__company{
+      font-size: 14px;
+      margin: 0;
+    }
+
+    &__email{
+      font-size: 8px;
+    }
+
+    &__site{
+      font-size: 8px;
+    }
+
+    &__title{
+      font-size: 8px;
+
+      &--totalMarg{
+        margin: 0 20px 10px 0;
+        line-height: 10px;
+      }
+
+      &--total{
+        margin: 0 0 10px 0;
+        line-height: 10px;
+      }
+    }
+
+    &__cell{
+      font-size: 8px;
+      margin-bottom: 0;
+    }
+
+    &__logoPic{
+      width: 60px;
+    }
+
+    &__footer{
+      width: calc(100% + 20px);
+      margin-left: -10px;
+      padding: 0;
+    }
+
+    &__total{
+      margin: 20px 0 0 0;
+      padding-bottom: 0;
+    }
+
+    &__instruction{
+      margin: 0;
+    }
+  }
+}

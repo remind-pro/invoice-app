@@ -1,0 +1,282 @@
+.notify{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 52px;
+  width: 100%;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, .18);
+  background: $blue;
+  padding: 0 20px;
+
+  &__info{
+    @include Nunito(18px, 400, 23px, #fff);
+  }
+
+  &__upgrade{
+    margin-left: 10px;
+    @include Nunito(18px, 700, 23px, $orange);
+  }
+}
+
+.readyCreate{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 60px;
+
+  &__heading{
+    @include Nunito(44px, 700, 55px, $font-grey);
+    margin: 0;
+  }
+
+  &__title{
+    @include Nunito(20px, 400, 26px, $font-grey);
+    margin-bottom: 20px;
+  }
+}
+
+.pageHeader{
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 99;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 68px;
+  background: #fff;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, .16);
+
+  &--column{
+    flex-direction: column;
+    height: auto;
+  }
+
+  &__wrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 68px;
+
+    &--center{
+      justify-content: center;
+    }
+  }
+
+  &__wrap:not(:last-child){
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, .16);
+    z-index: 11;
+  }
+
+
+  &__emptyItem{
+    width: 100px;
+  }
+
+  &__button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background: $orange;
+    padding: 20px 40px;
+    border: none;
+    @include Nunito(20px, 700, 26px, #fff);
+    cursor: pointer;
+    outline: none;
+
+    &--mob{
+      display: none;
+    }
+
+    &--ready{
+      width: 213px;
+      margin: 0 auto;
+      padding: 0;
+      height: 68px;
+      border-radius: 10px;  
+    }
+  }
+
+  &__heading{
+    @include Nunito(20px, 700, 26px, $font-grey);
+    margin-left: 50px;
+  }
+
+  &__lowHeading{
+    font-weight: 400;
+    margin-left: 5px;
+  }
+
+  &__goBack{
+    @include Nunito(20px, 700, 26px, $blue);
+    margin-left: 50px;
+
+    &--arrow{
+      display: none;
+    }
+  }
+
+  &__btnWrap{
+    display: flex;
+    height: 100%;
+  }
+
+  &__controls{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 87.5px;
+    background: $blue;
+    border: none;
+    cursor: pointer;
+    outline: none;
+
+    &:hover{
+      background: $blue-hover;
+    }
+
+    &:active{
+      background: $blue;
+    }
+  }
+
+  &__title{
+    @include Nunito(14px, 400, 18px, #fff);
+  }
+
+  &__icon{
+    display: block;
+    width: 24px;
+    height: 24px;
+    margin: 6px 0;
+  }
+
+}
+
+
+@media (max-width: 1150px){
+  .pageHeader{
+    &__heading{
+      font-size: 16px;
+      margin-right: 20px;
+    }
+  }
+}
+
+@media (max-width: 839px){
+
+  .pageHeader{
+    height: auto;
+    flex-wrap: wrap;
+
+    &__wrap{
+      justify-content: center;
+      padding: 0 20px;
+
+      &--heading{
+        height: 47px;
+      }
+    }
+
+    &__controls{
+      flex-grow: 1;
+    }
+
+    &__button{
+      flex-grow: 1;
+      max-width: 142px;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 18px;
+      padding: 0;
+      height: 46px;
+
+      &--hide{
+        display: none;
+      }
+
+      &--view{
+        height: 100%;
+      }
+
+      &--mob{
+        display: flex;
+        flex-direction: column;
+      }
+
+      &--wide{
+        max-width: 100%;
+      }
+
+      &--ready{
+        display: flex;
+        max-width: 100%;
+        width: 293px;
+        height: 68px;
+      }
+
+    }
+
+    &__heading{
+      font-size: 14px;
+      line-height: 18px;
+      margin-left: 20px;
+    }
+
+    &__btnWrap{
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      height: 68px;
+    }
+
+    &__goBack{
+      display: none;
+
+      &--arrow{
+        display: block;
+        width: 15px;
+        height: 28px;
+        background: url('../img/arrow.svg') no-repeat;
+        background-size: contain;
+      }
+    }
+
+    &__emptyItem{
+      display: none;
+    }
+  }
+  
+  .notify{
+    height: 52px;
+  
+    &__info{
+      text-align: center;
+      @include Nunito(14px, 400, 18px, #fff);
+    }
+  
+    &__upgrade{
+      margin-left: 10px;
+      @include Nunito(14px, 700, 18px, $orange);
+    }
+  }
+
+  .readyCreate{
+  
+    &__heading{
+      @include Nunito(20px, 700, 26px, $font-grey);
+    }
+  
+    &__title{
+      @include Nunito(14px, 400, 18px, $font-grey);
+    }
+  }
+  
+
+}

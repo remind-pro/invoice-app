@@ -1,0 +1,19 @@
+mixin card
+  +b.card
+    +e.column
+      +e.item
+        +e.SPAN.title Invoice:
+        +e.SPAN.detail #0000001
+      +e.item
+        +e.SPAN.title Client:
+        +e.SPAN.detail Starbuck Corp.
+    +e.column
+      +e.item
+        +e.SPAN.title Total:
+        +e.SPAN.detail.card__detail--total 29,800
+      +e.item
+        +e.SPAN.title Issued:
+        +e.SPAN.detail 4 Jan,2019
+    +e.info
+      +e.BUTTON.action Download invoice
+      +e.payInfo Client has paid!

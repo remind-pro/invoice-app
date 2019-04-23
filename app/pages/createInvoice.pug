@@ -1,0 +1,98 @@
+include ../../node_modules/bemto.pug/bemto.pug
+include ../blocks/pageHeader/pageHeader
+include ../blocks/form/form
+
+-var clientTitle = ['Client name', 'Client phone number', 'Client address']
+-var clientPlacehold = ['The vegan Co', '1234567890', '99, Beet Root Street, Carrot Town, 12345, Cabbage Country']
+-var clientHeading = 'Client info'
+-var clientItemCount = [ [0, 2], [2, 3] ]
+
+-var invoiceTitle = ['Invoice details', 'Invoice details']
+-var invoicePlacehold = ['3 Jan, 2019', '3 Feb, 2019']
+-var invoiceHeading = 'Invoice details'
+-var invoiceItemCount = [ [0, 2] ]
+
+-var productTitle = ['Name', 'Quantity', 'Unit Price', 'Amount']
+-var productPlacehold = ['Amount', '3', '$25', '$75', 'Fixing the toilet', 'Product, service name', '0', '$0', '$0', 'Product, service description']
+-var productHeading = 'Products, services'
+-var productItemCount = [ [0, 4], [4, 5], [5,9], [9,10] ]
+
+-var otherTitle = ['Tax rate % (Number only)', 'Payment instructions']
+-var otherPlacehold = ['0', 'Paypal to payments@piperplumbers.com']
+-var otherHeading = 'Other details'
+-var otherItemCount = [ [0, 1], [1, 2] ]
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    link(rel="stylesheet", href="css/normalize.min.css")
+    link(rel="stylesheet", href="css/style.min.css")
+    title Create invoice
+  body
+    +header(0, 'Generate invoice', 'Invoice #00001', 'Go back')
+    .info
+      +form(clientHeading, clientTitle, clientPlacehold, clientItemCount)
+      +form(invoiceHeading, invoiceTitle, invoicePlacehold, invoiceItemCount)
+      //+form(productHeading, productTitle, productPlacehold, productItemCount, true)
+
+      +b.SECTION.form
+        +e.header
+          +e.H2.heading Products, services
+        +e.FORM.list.form__list--Productsservices
+          +e.wrapper
+            +e.wrap.form__wrap--Productsservices1
+              +e.item.form__item--Productsservices1
+                +e.LABEL(for="Productsservices1").title Name
+                +e.INPUT(placeholder="Amount" id="Productsservices1").input
+              +e.item.form__item--Productsservices2
+                +e.LABEL(for="Productsservices2").title Quantity
+                +e.INPUT(placeholder="3" id="Productsservices2").input
+              +e.item.form__item--Productsservices3
+                +e.LABEL(for="Productsservices3").title Unit Price
+                +e.INPUT(placeholder="$25" id="Productsservices3").input
+              +e.item.form__item--Productsservices4
+                +e.LABEL(for="Productsservices4").title Amount
+                +e.INPUT(placeholder="$75" id="Productsservices4").input
+            +e.wrap.form__wrap--Productsservices2
+              +e.item.form__item--Productsservices5
+                +e.INPUT(placeholder="Fixing the toilet" id="Productsservices5").input
+          +e.wrapper
+            +e.wrap.form__wrap--Productsservices3
+              +e.item.form__item--Productsservices6
+                +e.LABEL(for="Productsservices6").title Name
+                +e.INPUT(placeholder="Product, service name" id="Productsservices6").input
+              +e.item.form__item--Productsservices7
+                +e.LABEL(for="Productsservices7").title Quantity
+                +e.INPUT(placeholder="0" id="Productsservices7").input
+              +e.item.form__item--Productsservices8
+                +e.LABEL(for="Productsservices8").title Unit Price
+                +e.INPUT(placeholder="$0" id="Productsservices8").input
+              +e.item.form__item--Productsservices9
+                +e.LABEL(for="Productsservices9").title Amount
+                +e.INPUT(placeholder="$0" id="Productsservices9").input
+            +e.wrap.form__wrap--Productsservices4
+              +e.item.form__item--Productsservices10
+                +e.INPUT(placeholder="Product, service description" id="Productsservices10").input
+            +e.remove
+        +e.add
+          +e.A(href="").addLink + Add more products, services
+
+      //+form(otherHeading, otherTitle, otherPlacehold, otherItemCount)
+
+      +b.SECTION.form
+        +e.header
+          +e.H2.heading Invoice settings
+        +e.FORM.list
+          +e.wrapper
+            +e.LABEL(for="checkBox1").item.form__item--checkBox
+              +e.customInput.form__customInput--active
+              +e.INPUT(type="checkbox" id="checkBox1" hidden).checkBox
+              +e.SPAN.checkBoxTitle Turn on link sharing and copy to my clipboard
+            +e.LABEL(for="checkBox1").item.form__item--checkBox
+              +e.customInput
+              +e.INPUT(type="checkbox" id="checkBox1" hidden).checkBox
+              +e.SPAN.checkBoxTitle Automagically email link to client and CC me on it
+                +e.checkBoxTitle.form__checkBoxTitle--reg (To: client@email.com, From: me@email.com)

@@ -1,0 +1,42 @@
+.layout{
+  padding: 0;
+  margin: 0;
+  height: 100%;
+
+  &--margTop{
+    margin-top: 50px;
+  }
+
+  &__wrap{
+    display: flex;
+  }
+
+  &__cell{
+    flex-grow: 1;
+    position: relative;
+
+    &--aside{
+      max-width: 203px;
+      width: 203px;
+    }
+  }
+}
+
+@media (max-width: 839px){
+  .layout{
+    padding-bottom: 60px;
+
+    &--margTop{
+      margin-top: 40px;
+    }
+    
+  
+    &__cell{
+  
+      &--aside{
+        flex-grow: 0;
+        width: 0;
+      }
+    }
+  }
+}
